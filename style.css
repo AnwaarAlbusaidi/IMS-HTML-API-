@@ -1,0 +1,149 @@
+/* Global styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f4f4f4;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 1rem;
+  }
+  
+  nav ul li a {
+    color: #fff6f6;
+    text-decoration: none;
+  }
+  
+  nav ul li:hover > ul {
+    display: block;
+  }
+  
+  nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    padding: 0.5rem;
+  }
+  
+  nav ul ul li {
+    display: block;
+  }
+  
+  nav ul ul li a {
+    color: #020202;
+    text-decoration: none;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav li ul {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  nav li:hover ul {
+    display: block;
+  }
+  
+  nav li ul li {
+    display: block;
+    padding: 10px;
+  }
+  
+  nav li ul li:hover {
+    background-color: #ddd;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto; /* horizontally center the form */
+    height: 100vh; /* set the height of the form to the full height of the viewport */
+    justify-content: center; /* vertically center the form */
+  }
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"]{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #555;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student Management - Institute Management System</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="script.js"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li class="dropdown">
+					<a href="#">Student</a></li>
+                <li><a href="#">Staff</a>
+                    <ul>
+						<li><a href="#" class="add">Add Staff</a></li>
+						<li><a href="#" class="view">View Staff</a></li>
+						<li><a href="#" class="edit">Edit Staff</a></li>
+						<li><a href="#" class="delete">Delete Staff</a></li>
+					</ul></li>
+				<li><a href="#">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<form id="student-form">
+				<h1>Staff Management</h1>
+				<label for="Staff-id">Staff ID:</label>
+				<input type="text" id="student-id" name="Staff-id" required>
+				
+				<label for="Staff-name">Staff Name:</label>
+				<input type="text" id="Staff-name" name="Staff-name" required>
+				
+				<label for="student-email">Staff Email:</label>
+				<input type="email" id="Staff-email" name="Staff-email" required>
+				
+                <label></label>
+				<button type="submit" id="submit-btn">Submit</button>
+			</form>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; Institute Management System</p>
+	</footer>
+</body>
+</html>
