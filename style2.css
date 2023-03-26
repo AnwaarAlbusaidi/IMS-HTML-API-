@@ -1,0 +1,383 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  
+  header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 1rem;
+  }
+  nav ul li a {
+    color: #efe6e6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav ul li a:hover {
+    color: #007bff;
+  }
+  
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+  
+  #btn-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  #btn-container button {
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #btn-container button:hover {
+    background-color: #0056b3;
+  }
+  #student-form{
+    display: none;
+  }
+  #student-form label,
+  #student-form input,
+  #student-form button {
+    margin-bottom: 10px;
+  }
+  
+  #student-form label {
+    font-weight: bold;
+  }
+  
+  #student-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  #student-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #student-form button:hover {
+    background-color: #0056b3;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    table-layout: fixed; /* Add this line */
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    word-wrap: break-word; /* Add this line */
+  }
+  
+  th {
+    font-weight: bold;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+  }
+  
+  
+  .hidden {
+    display: none;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  #student-form-delete{
+    display: none;
+  }
+
+  #student-form-delete label,
+  #student-form-delete input,
+  #student-form-delete button {
+    margin-bottom: 10px;
+  }
+  
+  #student-form-delete label {
+    font-weight: bold;
+  }
+  
+  #student-form-delete input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  #student-form-delete button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #student-form-delete button:hover {
+    background-color: #0056b3;
+  }
+  #student-update-form{
+    display: none;
+  }
+
+  #student-update-form label,
+  #student-update-form input,
+  #student-update-form button {
+    margin-bottom: 10px;
+  }
+  
+  #student-update-form label {
+    font-weight: bold;
+  }
+  
+  #student-update-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  #student-update-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #student-update-form button:hover {
+    background-color: #0056b3;
+  }
+  #Staff-form{
+    display: none;
+  }
+  #Staff-form label,
+  #Staff-form input,
+  #Staff-form button {
+    margin-bottom: 10px;
+  }
+  
+  #Staff-form label {
+    font-weight: bold;
+  }
+  
+  #Staff-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  #Staff-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #Staff-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  #Staff-form-delete{
+    display: none;
+  }
+
+  #Staff-form-delete label,
+  #Staff-form-delete input,
+  #Staff-form-delete button {
+    margin-bottom: 10px;
+  }
+  
+  #Staff-form-delete label {
+    font-weight: bold;
+  }
+  
+  #Staff-form-delete input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  #Staff-form-delete button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #Staff-form-delete button:hover {
+    background-color: #0056b3;
+  }
+  #Staff-update-form{
+    display: none;
+  }
+
+  #Staff-update-form label,
+  #Staff-update-form input,
+  #Staff-update-form button {
+    margin-bottom: 10px;
+  }
+  
+  #Staff-update-form label {
+    font-weight: bold;
+  }
+  
+  #Staff-update-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  #Staff-update-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #Staff-update-form button:hover {
+    background-color: #0056b3;
+  }
+
+  #welcome {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+
+
+
+
+  #login-form{
+    display: block;
+    justify-content: center;
+    margin-top: 202px;
+    margin-bottom: 20px;
+    
+  }
+  #login-form label,
+  #login-form input,
+  #login-form button {
+    margin-bottom: 10px;
+  }
+  
+  #login-form label {
+    font-weight: bold;
+  }
+  
+  #login-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  #login-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+  }

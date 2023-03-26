@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/teachers")
+@RequestMapping(path = "api/staff")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class StaffController {
     @Autowired
     StaffService StaffService;

@@ -12,6 +12,7 @@ import java.util.List;
 /**
  This class represents the controller for managing the students of an institute.
  */
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class StudentController {
     @Autowired
     StudentService studentService;
