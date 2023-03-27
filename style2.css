@@ -110,14 +110,13 @@
   #student-form button:hover {
     background-color: #0056b3;
   }
-  table {
+  /* table {
     width: 100%;
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     table-layout: fixed; /* Add this line */
   }
-  
   th,
   td {
     padding: 10px;
@@ -125,14 +124,12 @@
     border-bottom: 1px solid #ccc;
     word-wrap: break-word; /* Add this line */
   }
-  
   th {
     font-weight: bold;
   }
-  
   tfoot td {
     font-weight: bold;
-  }
+  } */
   
   
   .hidden {
@@ -381,3 +378,34 @@
     justify-content: center;
     transition: background-color 0.3s ease-in-out;
   }
+
+
+
+
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+   margin-left: 290px;
+    text-align: center;
+  }
+  
+  table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #fcfcfc;
+    color: #050505;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  table tr:hover {
+    background-color: #ddd;
+  }
+  
