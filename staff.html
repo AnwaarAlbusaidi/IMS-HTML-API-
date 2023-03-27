@@ -3,49 +3,86 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Student Management - Institute Management System</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="script.js"></script>
+	<title>Staff Management - Institute Management System</title>
+	<link rel="stylesheet" href="style2.css">
 </head>
 <body>
 	<header>
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li class="dropdown">
-					<a href="#">Student</a></li>
-                <li><a href="#">Staff</a>
-                    <ul>
-						<li><a href="#" class="add">Add Staff</a></li>
-						<li><a href="#" class="view">View Staff</a></li>
-						<li><a href="#" class="edit">Edit Staff</a></li>
-						<li><a href="#" class="delete">Delete Staff</a></li>
-					</ul></li>
-				<li><a href="#">Logout</a></li>
+				<li><a href="index.html">Home</a></li>
+                <li><a href="student.html">Student</a></li>
+                <li><a href="staff.html">Staff</a></li>
+				<li><a href="login.html">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
-		<section>
-			<form id="student-form">
-				<h1>Staff Management</h1>
-				<label for="Staff-id">Staff ID:</label>
-				<input type="text" id="student-id" name="Staff-id" required>
-				
-				<label for="Staff-name">Staff Name:</label>
-				<input type="text" id="Staff-name" name="Staff-name" required>
-				
-				<label for="student-email">Staff Email:</label>
-				<input type="email" id="Staff-email" name="Staff-email" required>
-				
-                <label></label>
-				<button type="submit" id="submit-btn">Submit</button>
-			</form>
-		</section>
+        <section>
+            <h1>Staff Management</h1>
+            <div id="btn-container">
+                <button id="create-btn">Create Staff</button>
+                <button id="get-btn">Get Staff</button>
+                <button id="update-btn">Update Staff</button>
+                <button id="delete-btn">Delete Staff</button>
+            </div>
+        </section>
+        <section>
+                <form id="Staff-form">        
+                    <label for="staff-name">Staff Name:</label>
+                    <input type="text" id="staff-name" name="staff-name" required>
+                    
+                    <label for="staff-email">Staff Email:</label>
+                    <input type="email" id="staff-email" name="staff-email" required>
+
+					<label for="staff-Salary">Staff Salary:</label>
+                    <input type="text" id="staff-Salary" name="staff-Salary" required>
+
+                    <button type="submit" id="submit-btn">Submit</button>
+                </form>
+        </section>
+        <section>
+                <form id="Staff-update-form">
+                    <label for="staff-id" id="LS" >Staff ID:</label>
+                    <input type="text" id="staff-id" name="staff-id">
+                    
+                    <label for="staffUpdatedName">Staff Name:</label>
+                    <input type="text" id="staffUpdatedName" name="staffUpdatedName" required>
+                    
+                    <label for="StaffUpdatedEmail">Staff Email:</label>
+                    <input type="email" id="StaffUpdatedEmail" name="StaffUpdatedEmail" required>
+
+					<label for="StaffUpdatedSalary">Staff Salary:</label>
+                    <input type="text" id="StaffUpdatedSalary" name="StaffUpdatedSalary" required>
+
+                    <button type="submit" id="submit-btn">update</button>
+                </form>
+        </section>
+        <section>
+            <form id="Staff-form-delete">
+                <label for="StaffID">Staff ID:</label>
+                <input type="text" id="StaffID" name="StaffID">
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+        </section>
+          <section>
+            <table id="Staff-table" style="display: none;">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+				  <th>Salary</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </section>
 	</main>
 	<footer>
 		<p>&copy; Institute Management System</p>
 	</footer>
+    <script src="StaffScript.js"></script>
 </body>
 </html>

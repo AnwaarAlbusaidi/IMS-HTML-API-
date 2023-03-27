@@ -4,13 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Institute Management System - Login</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style2.css">
 </head>
 <body>
 	<header>
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
 				<li><a href="#">Contact Us</a></li>
 				<li><a href="#">About Us</a></li>
 			</ul>
@@ -18,18 +17,34 @@
 	</header>
 	<main>
 		<section>
-			<form>
+			<form id="login-form">
                 <h2>Login</h2>
                 <input type="text" placeholder="Username" id="username">
-                <input type="text" placeholder="Password" id="Password" >
-                <button type="submit">Login</button>
+                <input type="password" placeholder="Password" id="password" >
+                <button type="submitPW">Login</button>
             </form>
 		</section>
 	</main>
 	<footer>
 		<p>&copy; Institute Management System</p>
 	</footer>
+    <script src="config.js"></script>
+    <script>
+        const form = document.getElementById('login-form');
 
-    <script src="script.js" ></script>
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    console.log(username);
+    const password = document.getElementById('password').value;
+    
+    if (username === config.username && password === config.password) {
+        window.location.href = 'index.html';
+    } else {
+        alert('Invalid username or password');
+    }
+});
+    </script>
 </body>
 </html>

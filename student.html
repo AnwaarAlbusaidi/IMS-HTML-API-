@@ -4,47 +4,76 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Student Management - Institute Management System</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="script.js"></script>
+	<link rel="stylesheet" href="style2.css">
 </head>
 <body>
 	<header>
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li class="dropdown">
-					<a href="#">Student</a>
-					<ul>
-						<li><a href="#" class="add">Add Student</a></li>
-						<li><a href="#" class="view">View Student</a></li>
-						<li><a href="#" class="edit">Edit Student</a></li>
-						<li><a href="#" class="delete">Delete Student</a></li>
-					</ul>
-				</li>
-                <li><a href="#">Staff</a></li>
-				<li><a href="#">Logout</a></li>
+				<li><a href="index.html">Home</a></li>
+                <li><a href="student.html">Student</a></li>
+                <li><a href="staff.html">Staff</a></li>
+				<li><a href="login.html">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
-		<section>
-			<form id="student-form">
-                <h1>Student Management</h1>
-				<label for="student-id">Student ID:</label>
-				<input type="text" id="student-id" name="student-id" required>
-				
-				<label for="student-name">Student Name:</label>
-				<input type="text" id="student-name" name="student-name" required>
-				
-				<label for="student-email">Student Email:</label>
-				<input type="email" id="student-email" name="student-email" required>
-				<button type="submit" id="submit-btn">Submit</button>
-			</form>
-		</section>
+        <section>
+            <h1>Student Management</h1>
+            <div id="btn-container">
+                <button id="create-btn">Create Student</button>
+                <button id="get-btn">Get Student</button>
+                <button id="update-btn">Update Student</button>
+                <button id="delete-btn">Delete Student</button>
+            </div>
+        </section>
+        <section>
+                <form id="student-form">        
+                    <label for="student-name">Student Name:</label>
+                    <input type="text" id="student-name" name="student-name" required>
+                    
+                    <label for="student-email">Student Email:</label>
+                    <input type="email" id="student-email" name="student-email" required>
+                    <button type="submit" id="submit-btn">Submit</button>
+                </form>
+        </section>
+        <section>
+                <form id="student-update-form">
+                    <label for="student-id" id="LS" >Student ID:</label>
+                    <input type="text" id="student-id" name="student-id">
+                    
+                    <label for="studentUpdatedName">Student Name:</label>
+                    <input type="text" id="studentUpdatedName" name="studentUpdatedName" required>
+                    
+                    <label for="studentUpdatedEmail">Student Email:</label>
+                    <input type="email" id="studentUpdatedEmail" name="studentUpdatedEmail" required>
+                    <button type="submit" id="submit-btn">update</button>
+                </form>
+        </section>
+        <section>
+            <form id="student-form-delete">
+                <label for="studentID">Student ID:</label>
+                <input type="text" id="studentID" name="studentID">
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+        </section>
+          <section>
+            <table id="student-table" style="display: none;">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </section>
 	</main>
 	<footer>
 		<p>&copy; Institute Management System</p>
 	</footer>
+    <script src="script.js"></script>
 </body>
 </html>
