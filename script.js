@@ -9,7 +9,9 @@ const deleteBtn = document.querySelector('#delete-btn');
 const studentTable = document.querySelector('#student-table tbody');
 const studentIdInput = document.querySelector("#student-id");
 const studentIdLabel = document.querySelector("#student-id-label");
-
+ // retrieve the stored username and password from the localStorage
+   const storedUsername = localStorage.getItem('username');
+   const storedPassword = localStorage.getItem('password');
 //-------------------------------create------------------------------------------------
 createBtn.addEventListener('click', () => {
     studentCreateForm.style.display = 'block';
@@ -25,7 +27,8 @@ studentCreateForm.addEventListener('submit', (event) => {
 
   fetch('http://localhost:8080/api/students', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json' ,
+    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
     body: JSON.stringify({
       name: studentName,
       email: studentEmail
@@ -46,31 +49,43 @@ studentCreateForm.addEventListener('submit', (event) => {
 //-------------------------------Get----------------------------------------------------
 getBtn.addEventListener('click', () => {
     studentCreateForm.style.display = 'none';
-  deleteForm.style.display = 'none';
-  studentUpdateForm.style.display = 'none';
-  studentTable.innerHTML = ''; // clear existing table rows
-  fetch('http://localhost:8080/api/students')
-    .then(response => response.json())
-    .then(data => {
-      // iterate over students and add them to the table
-      data.forEach(student => {
-        const row = document.createElement('tr');
-        const idCell = document.createElement('td');
-        const nameCell = document.createElement('td');
-        const emailCell = document.createElement('td');
-        idCell.textContent = student.id;
-        nameCell.textContent = student.name;
-        emailCell.textContent = student.email;
-        row.appendChild(idCell);
-        row.appendChild(nameCell);
-        row.appendChild(emailCell);
-        studentTable.appendChild(row);
-      });
-      // display the table
-      studentTable.parentElement.style.display = 'block';
+    deleteForm.style.display = 'none';
+    studentUpdateForm.style.display = 'none';
+    studentTable.innerHTML = ''; // clear existing table rows
+  
+    // retrieve the stored username and password from the localStorage
+    const storedUsername = localStorage.getItem('username');
+    const storedPassword = localStorage.getItem('password');
+  
+    fetch('http://localhost:8080/api/students', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)
+      }
     })
-    .catch(error => console.error(error));
-}); 
+      .then(response => response.json())
+      .then(data => {
+        // iterate over students and add them to the table
+        data.forEach(student => {
+          const row = document.createElement('tr');
+          const idCell = document.createElement('td');
+          const nameCell = document.createElement('td');
+          const emailCell = document.createElement('td');
+          idCell.textContent = student.id;
+          nameCell.textContent = student.name;
+          emailCell.textContent = student.email;
+          row.appendChild(idCell);
+          row.appendChild(nameCell);
+          row.appendChild(emailCell);
+          studentTable.appendChild(row);
+        });
+        // display the table
+        studentTable.parentElement.style.display = 'block';
+      })
+      .catch(error => console.error(error));
+  });
+  
 
 //------------------------------update----------------------------------------------------
 updateBtn.addEventListener('click', () => {
@@ -79,7 +94,6 @@ updateBtn.addEventListener('click', () => {
   deleteForm.style.display = 'none';
   studentUpdateForm.style.display = 'block';
 });
-
 // Set the form's submit event listener
 studentUpdateForm.addEventListener('submit', (event) => {
   event.preventDefault();  
@@ -91,7 +105,8 @@ studentUpdateForm.addEventListener('submit', (event) => {
   // Call the API's update function with the new values
   fetch(`http://localhost:8080/api/students/${studentid}`, {
     method: 'PUT',
-    headers: {'Content-Type': 'application/json'},
+     headers: { 'Content-Type': 'application/json' ,
+    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
     body: JSON.stringify({
       name: studentupdatedName,
       email: studentUpdatedEmail
@@ -121,6 +136,8 @@ deleteForm.addEventListener('submit', (event) => {
     if (confirmDelete) {
       fetch(`http://localhost:8080/api/students/${studentId}`, {
         method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' ,
+        'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
       })
         .then(response => {
           if (response.ok) {
