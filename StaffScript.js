@@ -8,7 +8,9 @@ const deleteBtn = document.querySelector('#delete-btn');
 const staffTable = document.querySelector('#Staff-table tbody');
 const staffIdInput = document.querySelector("#staff-id");
 const staffIdLabel = document.querySelector("#staff-id-label");
-
+ // retrieve the stored username and password from the localStorage
+ const storedUsername = localStorage.getItem('username');
+ const storedPassword = localStorage.getItem('password');
 //-------------------------------create------------------------------------------------
 createBtn.addEventListener('click', () => {
     staffCreateForm.style.display = 'block';
@@ -26,7 +28,8 @@ staffCreateForm.addEventListener('submit', (event) => {
 
   fetch('http://localhost:8080/api/staff', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 
+    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
     body: JSON.stringify({
       name: staffName,
       email: staffEmail,
@@ -51,7 +54,13 @@ getBtn.addEventListener('click', () => {
   staffUpdateForm.style.display = 'none';
   deleteForm.style.display = 'none';
   staffTable.innerHTML = ''; // clear existing table rows
-  fetch('http://localhost:8080/api/staff')
+  fetch('http://localhost:8080/api/staff', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)
+    }
+  })
     .then(response => response.json())
     .then(data => {
       // iterate over students and add them to the table
@@ -97,7 +106,8 @@ staffUpdateForm.addEventListener('submit', (event) => {
   // Call the API's update function with the new values
   fetch(`http://localhost:8080/api/staff/${staffid}`, {
     method: 'PUT',
-    headers: {'Content-Type': 'application/json'},
+    headers: {'Content-Type': 'application/json',
+    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
     body: JSON.stringify({
       name: staffupdatedName,
       email: staffUpdatedEmail,
@@ -128,6 +138,8 @@ deleteForm.addEventListener('submit', (event) => {
     if (confirmDelete) {
       fetch(`http://localhost:8080/api/staff/${staffId}`, {
         method: 'DELETE',
+    headers: {'Content-Type': 'application/json',
+             'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
       })
         .then(response => {
           if (response.ok) {
